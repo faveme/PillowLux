@@ -2,9 +2,6 @@ package com.revature.exceptions;
 
 public class CustomerNotFoundException extends RuntimeException {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 8645577743717345126L;
 
 	public CustomerNotFoundException() {

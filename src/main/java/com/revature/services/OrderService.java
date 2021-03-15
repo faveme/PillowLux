@@ -40,17 +40,13 @@ import com.revature.repositories.ProductRepository;
 		public DecimalFormat formatter = new DecimalFormat("0.00");
 
 		public double averageAmountSpentPerOrder() {
-			// get all the OrderProducts from DB
-			// Create a key value map of OrderID -> List<ProductID>
-			// For each order get the total amount and add that total amount to sum
-			// Return the average amount
 			return 0.0;
 		}
 		
 		public Product mostPurchasedItem() {
 			
 			Map<Integer, Integer> mapCount = new HashMap<Integer, Integer>();
-			// get all the OrderProducts from DB
+			
 			List<Order> prods= orderDAO.findAll();
 			if(prods.isEmpty()) {
 				return null;
@@ -87,7 +83,7 @@ import com.revature.repositories.ProductRepository;
 		public Product leastPurchasedItem() {
 			
 			Map<Integer, Integer> mapCount = new HashMap<Integer, Integer>();
-			// get all the OrderProducts from DB
+			
 			List<Order> prods = orderDAO.findAll();
 			if(prods.isEmpty()) {
 				return null;
@@ -129,7 +125,7 @@ import com.revature.repositories.ProductRepository;
 			System.out.println("found orders");
 			float sum = 0;
 			for(Order order : orders) {
-				// FOr every order, find the OrderProduct objects belonging to that order
+				// For every order, find the OrderProduct objects belonging to that order
 			
 				for(Product product: order.getProducts()) {
 					// fetch the product object
@@ -161,19 +157,12 @@ import com.revature.repositories.ProductRepository;
 				}
 			}
 			Calendar calendar = Calendar.getInstance();
-
-			// 2) get a java.util.Date from the calendar instance.
-//			    this date will represent the current instant, or "now".
 			java.util.Date now = calendar.getTime();
-
-			// 3) a java current time (now) instance
 			java.sql.Timestamp currentTimestamp = new java.sql.Timestamp(now.getTime());
-			// if they both exist, create OrderProduct for each product in DTO and save them to DB
+			// if products exist, create OrderProduct for each product in DTO and save them to DB
 			// save Order to DB and get the ID
 			Order order = new Order(orderDTO.getCustomerID(), currentTimestamp, orderDTO.getComments());
-			// 1) create a java calendar instance
-//			DateFormat format = new SimpleDateFormat("yyyy-MMM-dd");
-//			format.format(currentTimestamp);
+			
 			order.setDate(currentTimestamp);
 			
 			
