@@ -46,7 +46,7 @@ To-do list:
 
 ## Usage
 
-Use your EC2 URL to send HTTP requests to. Below are examples of URIs you can add to the end of your URL for requests, as well as details on the HTTP methods used and how to structure requests.
+Use your EC2 URL to send HTTP requests. Below are examples of URIs you can add to the end of your URL for requests, as well as details on the HTTP methods used and how to structure requests.
 
  "GET" to get a customer id
 `/data/admin/customers/(insert customer number here)`
